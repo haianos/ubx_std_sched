@@ -1,0 +1,10 @@
+return block
+{
+  name="receiver",
+  meta_data="doc=a dummy receiver cblock",
+  port_cache=true,
+  
+  -- define which operations this block implements
+  operations = { start=true, step=true, stop=true },
+
+}

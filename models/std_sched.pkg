@@ -1,0 +1,19 @@
+return pkg
+{
+  name="ubx_std_sched",
+  path="../",
+  
+  types = {
+    { name="seq_config", dir="types" },
+    { name="ptrig_period", dir="types" },
+    { name="ptrig_tstat", dir="types" },
+  },
+  
+  blocks = {
+    { name="sseq", file="sseq.blx", src_dir="sseq" },
+  },
+  
+  modules = {
+    { name="schedmod", blocks={"sseq"} },
+  },
+}

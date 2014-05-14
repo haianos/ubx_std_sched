@@ -1,0 +1,18 @@
+# - Config file for the ubx_std_sched package
+# It defines the following variables
+#  UBX_STD_SCHED_TYPES_INCLUDE_DIRS - include directories for ubx_std_sched_types
+#  UBX_STD_SCHED_TYPES_LIBRARIES    - libraries to link against
+ 
+# Compute paths
+#get_filename_component(UBX_STD_SCHED_TYPES_CMAKE_DIR "${UBX_STD_SCHED_TYPES_CMAKE_DIR}" PATH)
+set(UBX_STD_SCHED_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+set(UBX_STD_SCHED_TYPES_CMAKE_DIR "@CONF_CMAKE_DIR@")
+
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET ubx_std_sched AND NOT UBX_STD_SCHED_TYPES_BINARY_DIR)
+  include("${UBX_STD_SCHED_TYPES_CMAKE_DIR}/ubx-std-sched-types-targets.cmake")
+endif()
+ 
+# These are IMPORTED targets created by ubx-std-sched-types-targets.cmake
+set(UBX_STD_SCHED_TYPES_LIBRARIES ubx_std_sched)

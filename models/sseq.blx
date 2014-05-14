@@ -1,0 +1,20 @@
+return block
+{
+  name="sseq",
+  meta_data="doc=A static sequential function block scheduler",
+  port_cache=true,
+
+  types = {
+    { name="seq_config", class='struct', doc= "Linear, static sequence of blocks to be triggered"},
+    { name="ptrig_period", class='struct', doc= ""},
+    { name="ptrig_tstat", class='struct', doc= ""},
+  },
+
+  configurations= {
+    { name="seq_blocks", type_name = "struct seq_config", doc="" },
+  },
+  
+  -- define which operations this block implements
+  operations = { start=true, step=true, stop=true },
+
+}
